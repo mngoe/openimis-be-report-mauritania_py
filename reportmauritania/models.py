@@ -530,7 +530,7 @@ def invoice_report_query(user, **kwargs):
                 claim_services = ClaimService.objects.filter(
                     claim = claim,
                     status=1
-                ).filter(validity_to__is_null=True)
+                ).filter(validity_to__isnull=True)
                 type_visite = ""
                 if claim.visit_type == "1":
                     type_visite = "Urgence"
@@ -712,7 +712,7 @@ def invoice_report_query_payment(user, **kwargs):
                 claim_services = ClaimService.objects.filter(
                     claim = claim,
                     status=1
-                ).filter(validity_to__is_null=True)
+                ).filter(validity_to__isnull=True)
                 type_visite = ""
                 if claim.visit_type == "1":
                     type_visite = "Urgence"
